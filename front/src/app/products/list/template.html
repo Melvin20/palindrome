@@ -1,0 +1,33 @@
+<div class="col s12 m12 xl12 padding-0">
+    
+    <div class="col s6 m6 l4 xl4" *ngFor="let item of resultSearch">
+        <div class="col s12 ">
+          <div class="card">
+            <div class="card-image">
+              <img  [src]="item.image" class="img-product">
+            </div>
+            <div class="card-content">
+             <h6>
+                 <strong>{{item.brand}}</strong>
+                 {{item.description}}
+             </h6>
+             <h6>
+                <strong> {{item.price | currency }} </strong>
+                <span *ngIf="item.discount && item.discount == 50">
+                    <span class="discount-text">
+                        {{item.discount}} %
+                    </span>
+                    <br>
+                    <small class="price-discount">
+                        {{item.price * 2 | currency}}
+                    </small>
+                </span>
+             </h6>
+            </div>
+            <div class="card-action">
+              <a [routerLink]="['/products/'+item.id]">Ver Producto</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>

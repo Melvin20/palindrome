@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  challen:
+    container_name: api_challen
+    restart: always
+    build: api/.
+    command: npm start
+    volumes:
+      - ./api:/usr/src/app
+
+    ports:
+      - "3002:3002"
+    environment:
+      - DB_MONGODB_USER=${DB_MONGODB_USER}
+      - DB_MONGODB_PASSWORD=${DB_MONGODB_PASSWORD}
+      - DB_MONGODB_DB=${DB_MONGODB_DB}
+  app:
+    build: front/.
+    command: sh -c "npm start"
+    ports:
+      - 4200:4200
+    working_dir: /home/node/app
+    volumes:
+      - ./front:/home/node/app
+      - node_modules:/home/node/app/node_modules
+volumes:
+  node_modules:

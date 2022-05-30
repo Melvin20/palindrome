@@ -1,0 +1,21 @@
+<div class="col s12 m12 xl12 padding-0">
+  <div class="navbar-fixed light-blue darken-2 top-nav">
+    <div class="col s12 l12 m12 xl12 padding-0">
+     
+      <div class="col s3  l3 xl3 m3">
+        <i class="material-icons icon-menu">menu</i>
+        <i class="material-icons icon-menu">fullscreen</i>
+      </div>
+      
+      <div class="col s6 l6 xl6 m6 " *ngIf="!active">
+        <input class="color white" placeholder="    Buscar" [(ngModel)]="search" (ngModelChange)="searchValue()">
+       
+      </div>
+      <div class="col s3 l3 xl3 m3 right">
+        <img
+          src="https://st4.depositphotos.com/1012074/20946/v/600/depositphotos_209469984-stock-illustration-flat-isolated-vector-illustration-icon.jpg"
+          alt="" width="50" class="img-profile right">
+      </div>
+    </div>
+  </div>
+</div>

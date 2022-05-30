@@ -1,0 +1,15 @@
+{
+    "name": "avanti-api",
+    "version": "1.0.0",
+    "description": "init docker",
+    "main": "index.js",
+    "repository": "git@gitlab.com:ccuray/avanti-api.git",
+    "author": "cristiancuray@gmail.com",
+    "license": "MIT",
+    "scripts": {
+        "docker:logs-challengue": "docker logs -f --tail=100 api_challen"
+    },
+    "devDependencies": {
+        "@types/helmet": "^4.0.0"
+    }
+}
